@@ -1,2 +1,2 @@
 # leetcode
-C++ solutiona to leetcode.
+C++ solutions to leetcode.
