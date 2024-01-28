@@ -1,20 +1,24 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        unordered_map<char,int> mpp;
-        for(auto it:s){
-            mpp[it]++;
+        int count[26] = {0};
+        for (char x : s) {
+            count[x - 'a']++;
         }
         
-        for(auto ti:t){
-            mpp[ti]--;
+        // Decrement the frequency of characters in string t
+        for (char x : t) {
+            count[x - 'a']--;
         }
         
-        for(auto x:mpp){
-            if(x.second!=0){
+        // Check if any character has non-zero frequency
+        for (int val : count) {
+            if (val != 0) {
                 return false;
             }
         }
+        
         return true;
+        
     }
 };
